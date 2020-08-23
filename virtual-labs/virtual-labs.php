@@ -14,7 +14,7 @@
 
 $plugin_uri = plugin_dir_url(__FILE__);
 $react_app_uri = "{$plugin_uri}assets/js/main.js";
-add_shortcode('virtual_labs', function() use($react_app_uri){
+add_shortcode('virtual_labs', function() use($react_app_uri) {
     return <<<EOT
 <div id="apnic-virtual-labs"></div>
 <script src="$react_app_uri"></script>
