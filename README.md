@@ -30,12 +30,12 @@ Steps are similar to that of Linux and Mac. Though, you need to use **${PWD}** t
 ```
 Once services are up, go to http://localhost:8000/
 
-### Development environment
+## Development environment
 See below the project's folder structure
 
 ![Folder Structure](/images/folders.png "Folder Structure")
 
-#### Start development environment
+### Start development environment
 It's similar to running the demo. However, you need to install the dependencies of the React App.
 1. Pull React App dependencies
 ```
@@ -54,7 +54,7 @@ $ npm run watch
 $ npm run build
 ```
 
-### Deployment
+## Deployment
 1. Copy the folder **virtual-labs** into your WP plugin folder and activate the plugin. Alternatively, create a zip version of the folder **virtual-labs.zip** and upload it from admin panel.
 
 ![Plugin Folder](/images/plugin.png "Plugin Folder")
