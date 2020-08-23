@@ -16,9 +16,18 @@ $ git clone https://github.com/carlouni/virtual-labs.git
 $ cd virtual-labs/
 $ docker run --rm --name apnic-virtual-labs -p 8000:80 -v "$PWD":/var/www/html/wp-content/plugins/ carlouni/wordpress
 ```
-Once the services are up, go to http://localhost:8000/
+Once services are up, go to http://localhost:8000/
 
 ![Virtual Labs Screeshot](/images/virtual-labs.png "Virtual Labs Screeshot")
+
+### Run demo on Windows Powershell
+Steps are similar to that of Linux and Mac. Though, you need to use **%cd%** to refer to your current directory.
+```
+> git clone https://github.com/carlouni/virtual-labs.git
+> cd virtual-labs/
+> docker run --rm --name apnic-virtual-labs -p 8000:80 -v %cd%:/var/www/html/wp-content/plugins/ carlouni/wordpress
+```
+Once services are up, go to http://localhost:8000/
 
 ### Development environment
 See below list of main folders
