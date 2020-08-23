@@ -18,4 +18,4 @@ docker run --rm --name apnic-virtual-labs -p 8000:80 -v "$PWD":/var/www/html/wp-
 ```
 Once the services are up, go to http://localhost:8000/
 
-![Virtual Labs Screeshot](/images/virtual-labs.png | width=200)
+![Virtual Labs Screeshot](/images/virtual-labs.png "Virtual Labs Screeshot")
