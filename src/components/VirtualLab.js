@@ -4,7 +4,7 @@ export default class VirtualLab extends Component {
   render() {
     const data = this.props.data;
     return (
-        <div className="card" style={{width: "100%", marginBottom: "5px"}}>
+        <div className="card" style={{width: "100%", marginBottom: "5px", cursor: "move"}} draggable="true">
             <div className="container">
                 <div className="row">
                     <div className="col-xs-12 col-sm-3 p-0">
