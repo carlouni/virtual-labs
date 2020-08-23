@@ -10,7 +10,7 @@ See links below for more details:
 > Github: https://github.com/carlouni/docker-wordpress 
 
 
-### Run on Linux / Mac
+### Run demo on Linux / Mac
 ```
 git clone https://github.com/carlouni/virtual-labs.git
 cd virtual-labs/
@@ -19,3 +19,30 @@ docker run --rm --name apnic-virtual-labs -p 8000:80 -v "$PWD":/var/www/html/wp-
 Once the services are up, go to http://localhost:8000/
 
 ![Virtual Labs Screeshot](/images/virtual-labs.png "Virtual Labs Screeshot")
+
+### Development environment
+See below list of main folders
+
+```
+src/ # Reac App source code
+virtual-labs/ # WP plugin
+```
+
+#### Start development environment
+It's similar to running the demo. However, you need to install the dependencies of the React App.
+1. Pull React App dependencies
+```
+$ npm install
+```
+2. Start docker server if you haven't started it before.
+```
+$ docker run --rm --name apnic-virtual-labs -p 8000:80 -v "$PWD":/var/www/html/wp-content/
+```
+3. Start watcher so it builds automatically when making changes to React App
+```
+$ npm run watch
+```
+4. After you are done with your changes, run a production build.
+```
+$ npm run build
+```
