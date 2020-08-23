@@ -12,9 +12,9 @@ See links below for more details:
 
 ### Run demo on Linux / Mac
 ```
-git clone https://github.com/carlouni/virtual-labs.git
-cd virtual-labs/
-docker run --rm --name apnic-virtual-labs -p 8000:80 -v "$PWD":/var/www/html/wp-content/plugins/ carlouni/wordpress
+$ git clone https://github.com/carlouni/virtual-labs.git
+$ cd virtual-labs/
+$ docker run --rm --name apnic-virtual-labs -p 8000:80 -v "$PWD":/var/www/html/wp-content/plugins/ carlouni/wordpress
 ```
 Once the services are up, go to http://localhost:8000/
 
@@ -36,7 +36,7 @@ $ npm install
 ```
 2. Start docker server if you haven't started it before.
 ```
-$ docker run --rm --name apnic-virtual-labs -p 8000:80 -v "$PWD":/var/www/html/wp-content/
+$ docker run --rm --name apnic-virtual-labs -p 8000:80 -v "$PWD":/var/www/html/wp-content/plugins/ carlouni/wordpress
 ```
 3. Start watcher so it builds automatically when making changes to React App
 ```
@@ -46,3 +46,8 @@ $ npm run watch
 ```
 $ npm run build
 ```
+
+### Deployment
+1. Copy the folder **virtual-labs** into your WP plugin folder and activate the plugin. Alternativelly, create a zip version of the folder **virtual-labs.zip** and upload it from admin panel.
+2. Create a new WP page and in the plain text content editor include the **[virtual-labs]** shortcode and save.
+3. You might need to add some styling or include **Bootstrap 4 styles** to your site.
