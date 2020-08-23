@@ -56,7 +56,8 @@ $ npm run build
 
 ### Deployment
 1. Copy the folder **virtual-labs** into your WP plugin folder and activate the plugin. Alternatively, create a zip version of the folder **virtual-labs.zip** and upload it from admin panel.
+
 ![Plugin Folder](/images/plugin.png "Plugin Folder")
-2. Create a new WP page and in the plain text content editor include the **[virtual_labs]** shortcode and save.
+1. Create a new WP page and in the plain text content editor include the **[virtual_labs]** shortcode and save.
 ![WP Shortcode](/images/shortcode.png "WP Shortcode")
 3. You might need to add some styling or include **Bootstrap 4 styles** to your site.
