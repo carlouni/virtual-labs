@@ -2,8 +2,10 @@ import chunck from "lodash/chunk";
 import React, { Component } from "react";
 import { ReactSortable } from "react-sortablejs";
 import { getVirtualLabs } from "../services/virtualLabs";
+import Error from "./Error";
+import LabItem from "./LabItem";
+import Loader from "./Loader";
 import Paginator from "./Paginator";
-import VirtualLab from "./VirtualLab";
 
 export default class VirtualLabs extends Component {
   constructor() {
@@ -11,16 +13,23 @@ export default class VirtualLabs extends Component {
     this.state = {
       pages: [],
       page: 0,
+      error: "",
     };
     this.onPageChange = this.onPageChange.bind(this);
   }
 
   async componentDidMount() {
-    const labs = await getVirtualLabs();
-    const pages = chunck(labs, 5);
-    this.setState({
-      pages: pages,
-    });
+    try {
+      const labs = await getVirtualLabs();
+      const pages = chunck(labs, 5);
+      this.setState({
+        pages: pages,
+      });
+    } catch (e) {
+      this.setState({
+        error: e.message,
+      });
+    }
   }
 
   onPageChange(newPage) {
@@ -28,6 +37,12 @@ export default class VirtualLabs extends Component {
   }
 
   render() {
+    // Render error message
+    if (this.state.error.length > 0) {
+      return <Error message={this.state.error} />;
+    }
+
+    // If pages found, render pages
     const { pages, page } = this.state;
     if (pages.length > 0) {
       return (
@@ -46,7 +61,7 @@ export default class VirtualLabs extends Component {
             }}
           >
             {pages[page].map((lab) => (
-              <VirtualLab key={lab.id} data={lab}></VirtualLab>
+              <LabItem key={lab.id} data={lab}></LabItem>
             ))}
           </ReactSortable>
           <Paginator
@@ -56,8 +71,9 @@ export default class VirtualLabs extends Component {
           />
         </>
       );
-    } else {
-      return <p>Loading</p>;
     }
+
+    // Render spinner as default
+    return <Loader />;
   }
 }
