@@ -30,6 +30,13 @@ Steps are similar to that of Linux and Mac. Though, you need to use **${PWD}** t
 ```
 Once services are up, go to http://localhost:8000/
 
+### Log in to WP admin panel
+Go to http://localhost:8000/wp-admin/ and use credentials below
+```
+User: admin
+Password: securepass
+```
+
 ## Development environment
 See below the project's folder structure
 
